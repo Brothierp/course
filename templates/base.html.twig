@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Ma liste de course ! 
+			{% endblock %}
+		</title>
+		
+		{% block stylesheets %}
+			<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		{% endblock %}
+
+		{% block javascripts %}
+			<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		{% endblock %}
+	</head>
+	<body>
+    {% block nav %}
+			<nav class="navbar navbar-expand navbar-dark bg-dark">
+				<a href="{{ path('article')}}" class="navbar-brand">Ma Liste de Course</a>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<a href="{{ path('article')}}" class="nav-item active nav-link">accueil</a>
+						<a href="#" class="nav-item active nav-link">A propos</a>
+					</ul>
+
+
+				</nav>
+			{% endblock %}
+		{% block body %}{% endblock %}
+
+		
+		</body>
+	</body>
+</html>

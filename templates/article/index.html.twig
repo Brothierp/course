@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HOME{% endblock %}
+
+
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="well">
+		<table class="table">
+        
+       
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>article</th>
+                    <th>quantité</th>
+					<th>modifier</th>
+					<th>supprimer</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+
+				{% for a in articles %}
+					<tr>
+						<td>{{ a.id }}</td>
+
+						<td>{{ a.label }}</td>
+
+                        <td>{{ a.qte }}</td>
+
+						<td>
+							 <a href="{{ path('modifier',{id : a.id })}}" class="btn btn-outline-warning">
+								<i class="fas fa-edit"></i> Modify
+							</a>
+						</td>
+
+						<td>
+							<a onclick="return confirm('Supprimer :{{ " " ~ a.qte ~ " " ~ a.label}} ?')" href="{{ path('delete',{id : a.id })}}" class="btn btn-danger">
+								<i class="fas fa-trash"></i> Delete
+						</td>
+					</tr>
+				{% endfor %}
+
+
+			</tbody>
+		</table>
+
+        <a href="{{ path('ajouter')}}" class="btn btn-success">
+								<i class="fas fa-plus"></i> Ajouter
+							</a>
+
+	</div>
+
+{% endblock %}

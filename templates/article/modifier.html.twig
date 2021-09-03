@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Modifier | {{ parent() }}{% endblock %}
+
+{% block body %}
+<h1>Modifier un article</h1>
+
+<div class="col-4 mb-4">
+{{ form_start(addArticle)}}
+
+{{ form_widget(addArticle)}}
+
+<button type="submit" class="btn btn-warning">Modifier</button>
+{{ form_end(addArticle)}}
+</div>
+  
+   
+{% endblock %}
